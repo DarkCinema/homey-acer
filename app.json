@@ -1,0 +1,88 @@
+{
+    "id": "nl.darkcinema.keene.acer",
+    "name": {
+        "en": "H9500BD"
+    },
+    "version": "0.0.1",
+    "compatibility": "1.x",
+    "author": {
+        "name": "Oswin Peters",
+        "email": "oswin@darkcinema.nl"
+    },
+    "images": {
+      "large": "./assets/images/large.png",
+      "small": "./assets/images/small.png"
+    },
+    "category": "appliances",
+    "description": {
+      "en": "Acer H9500BD Commands",
+      "nl": "Acer H9500BD COmmands"
+    },
+    "dependencies": {
+    		"net": "*"
+    },
+    "permissions": [
+       "homey:manager:speech-output"
+   ],
+    "flow": {
+       "triggers": [
+                {
+                "id": "powerstatus-changed",
+                "title": { "en": "Power status Changed" },
+                "hint": { "en": "This card is triggered when the powerstatus is changed"},
+                "tokens": [
+                    {
+                        "name": "powerstatus",
+                        "title": {"en": "Powerstatus"},
+                        "type": "string",
+                        "example": {"en": "ON"}
+                    }
+                    
+                        ]
+                 }
+                    ],
+        "actions":[
+            {
+                "id":"poweron",
+                "title":{
+                    "en":"Power On"
+                }
+            },
+            {    
+                "id":"poweroff",
+                "title":{
+                    "en":"Power Off"
+                }
+            },
+            {
+                "id":"powerpollon",
+                "title":{
+                    "en":"Start Powerstatus polling"
+                }
+            },
+            {
+                "id":"powerpolloff",
+                "title":{
+                    "en":"Stop Powerstatus polling"
+                }
+            },
+            {
+                "id": "SetCommand",
+                "title": {
+                    "en": "Select Command"
+                },
+                "args": [
+                    {
+                        "name": "command",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "command"
+                        }
+                    }
+                ]
+            }
+                        
+        ]}
+
+    }
+
